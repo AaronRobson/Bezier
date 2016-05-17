@@ -28,10 +28,8 @@ tMin :: T
 tMin = 0
 tMax :: T
 tMax = 1
-tMid :: T
-tMid = 0.5
 fluxions :: [T]
-fluxions = [tMin,0.1,0.2,0.3,0.4,tMid,0.6,0.7,0.8,0.9,tMax] --[tMin,(tMin+0.1)..tMax]
+fluxions = [tMin,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,tMax] --[tMin,(tMin+0.1)..tMax]
 
 difference1d :: Point1d -> Point1d -> Point1d
 difference1d p1 p2 = p2 - p1
@@ -52,12 +50,6 @@ partWayDownLine2d p1 p2 t = (x,y)
   where
     x = partWayDownLine1d (xPoint p1) (xPoint p2) t
     y = partWayDownLine1d (yPoint p1) (yPoint p2) t
-
-midPoint1d :: Point1d -> Point1d -> Point1d
-midPoint1d p1 p2 = partWayDownLine1d p1 p2 tMid
-
-midPoint2d :: Point2d -> Point2d -> Point2d
-midPoint2d p1 p2 = partWayDownLine2d p1 p2 tMid
 
 adjacentPairs :: [a] -> [(a,a)]
 adjacentPairs [] = []
