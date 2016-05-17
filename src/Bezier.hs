@@ -118,7 +118,7 @@ generateSVG ps = unlines $ [encodingLine, docType, headerLine] ++ (map (indent +
 
 main :: IO ()
 main = do
-    putStrLn $ "Generating a bezier curve \"" ++ filename ++ "\" with these anchor points:"
+    putStrLn $ "Generating a Bezier curve \"" ++ filename ++ "\" with these anchor points:"
     print exampleAnchors
     writeFile filename svgText
   where
