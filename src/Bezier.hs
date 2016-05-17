@@ -53,7 +53,7 @@ partWayDownLine2d p1 p2 t = (x,y)
 
 adjacentPairs :: [a] -> [(a,a)]
 adjacentPairs [] = []
-adjacentPairs [x] = []
+adjacentPairs [_] = []
 adjacentPairs (x1:x2:xs) = (x1,x2):(adjacentPairs (x2:xs))
 
 --Recursively convert to a mobile set of anchor points of one order fewer (i.e. quadratic to cubic).
