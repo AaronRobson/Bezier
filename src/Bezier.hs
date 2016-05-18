@@ -24,12 +24,8 @@ yPoint = snd
 
 --Should be between 0 and 1 inclusive.
 type T = Double
-tMin :: T
-tMin = 0
-tMax :: T
-tMax = 1
+
 fluxions :: [T]
-fluxions = [tMin,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,tMax] --[tMin,(tMin+0.1)..tMax]
 
 difference1d :: Point1d -> Point1d -> Point1d
 difference1d p1 p2 = p2 - p1
