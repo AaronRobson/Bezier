@@ -25,8 +25,13 @@ yPoint = snd
 --Should be between 0 and 1 inclusive.
 type T = Double
 
+fluxionMaker :: (Integral a, Fractional b) => a -> [b]
+fluxionMaker n
+  | n <= 1 = [0,1]
+  | otherwise = map (\x -> (fromIntegral x) / (fromIntegral n)) [0..n]
+
 fluxions :: [T]
-fluxions = [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0]
+fluxions = fluxionMaker 11
 
 difference1d :: Point1d -> Point1d -> Point1d
 difference1d p1 p2 = p2 - p1
