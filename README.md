@@ -1,2 +1,2 @@
 # Bezier
-Bezier curve explorations.
+Bézier curve explorations.
