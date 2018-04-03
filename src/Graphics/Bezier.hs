@@ -1,4 +1,4 @@
-module Bezier
+module Graphics.Bezier
 where
 
 import Data.List
@@ -109,19 +109,3 @@ generateSVG ps = unlines $ [encodingLine, docType, headerLine] ++ (map (indent +
             lineFunc ((x1,y1),(x2,y2)) = "<line x1=\"" ++ (show x1) ++ "\" y1=\"" ++ (show y1) ++ "\" x2=\"" ++ (show x2) ++ "\" y2=\"" ++ (show y2) ++ "\" " ++ style ++ " />"
     joinStr :: String -> [String] -> String
     joinStr sep strings = concat $ intersperse sep strings
-
-main :: IO ()
-main = do
-    putStrLn $ "Generating a Bezier curve \"" ++ filename ++ "\" with these anchor points:"
-    print exampleAnchors
-    writeFile filename svgText
-  where
-    exampleAnchors =
-      [ (20,20)
-      , (10,90)
-      , (90,10)
-      , (80,80)
-      ]
-    filename :: FilePath
-    filename = "example.svg"
-    svgText = generateSVG $ findBezierPoints2d exampleAnchors
