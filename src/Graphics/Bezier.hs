@@ -31,7 +31,7 @@ fluxionMaker n
   | otherwise = map (\x -> (fromIntegral x) / (fromIntegral n)) [0..n]
 
 fluxions :: [T]
-fluxions = fluxionMaker 51
+fluxions = fluxionMaker (51 :: Int)
 
 difference1d :: Point1d -> Point1d -> Point1d
 difference1d p1 p2 = p2 - p1
